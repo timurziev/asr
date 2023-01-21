@@ -2,13 +2,27 @@
 import Location from './components/Location.vue'
 import Next from './components/Next.vue'
 import Timetable from './components/Timetable.vue'
+import Navigation from './components/Navigation.vue'
+import { ref } from 'vue'
+import Schedule from './components/Schedule.vue'
+
+const activeSection = ref('schedule') // todo: home
 </script>
 
 <template>
   <div class="wrapper">
-    <Location/>
-    <Next/>
-    <Timetable/>
+    <section class="home" v-if="activeSection === 'home'">
+      <Location/>
+      <Next/>
+      <Timetable/>
+    </section>
+    <section class="schedule" v-if="activeSection === 'schedule'">
+      <Schedule/>
+    </section>
+    <Navigation
+        :active-section="activeSection"
+        @navigate="activeSection = $event"
+    />
   </div>
 </template>
 
@@ -16,7 +30,6 @@ import Timetable from './components/Timetable.vue'
 .wrapper {
   margin: 0 auto;
   width: 360px;
-  padding: 16px 40px 40px;
   box-sizing: border-box;
   background-color: #ffffff;
   color: #000000;
@@ -26,12 +39,18 @@ import Timetable from './components/Timetable.vue'
     margin-bottom: 0;
   }
 
-  .location {
+  .location,
+  .next,
+  .timetable {
     margin-bottom: 40px;
   }
+}
 
-  .next {
-    margin-bottom: 40px;
-  }
+.home {
+  padding: 16px 40px 0;
+}
+
+.navigation {
+  padding: 10px;
 }
 </style>

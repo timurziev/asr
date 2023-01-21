@@ -8,11 +8,14 @@ const tomorrow = ref(schedule.find(item => item.day === new Date().getDate() + 1
 const startOfNight = ref(stringToDate(today.value.maghrib))
 const endOfNight = ref(stringToDate(tomorrow.value.fajr, 1))
 
+const scheduleForMonth = schedule
+
 export function useSchedule() {
   return {
     today,
     tomorrow,
     startOfNight,
     endOfNight,
+    scheduleForMonth,
   }
 }
