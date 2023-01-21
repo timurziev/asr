@@ -37,33 +37,23 @@
 
 <script setup>
 import { computed } from 'vue'
-import { dateToString, stringToDate } from '../composables/useDate.js'
+import { dateToString } from '../composables/useDate.js'
+import { useSchedule } from '../composables/useSchedule.ts'
 
-const props = defineProps({
-  today: Object,
-  tomorrow: Object,
-})
+const { today, startOfNight, endOfNight } = useSchedule()
 
-const getNightEdges = () => {
-  const start = stringToDate(props.today.maghrib)
-  const end = stringToDate(props.tomorrow.fajr, 1)
-
-  return { start, end }
-}
+let startTimestamp = startOfNight.value.getTime()
+let endTimestamp = endOfNight.value.getTime()
 
 const half = computed(() => {
-  const {start, end} = getNightEdges()
-
   return dateToString(
-      new Date((start.getTime() + end.getTime()) / 2)
+      new Date((startTimestamp + endTimestamp) / 2)
   )
 })
 
 const third = computed(() => {
-  const {start, end} = getNightEdges()
-
   return dateToString(
-      new Date(end.getTime() - ((end.getTime() - start.getTime()) / 3))
+      new Date(endTimestamp - ((endTimestamp - startTimestamp) / 3))
   )
 })
 </script>

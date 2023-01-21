@@ -1,7 +1,7 @@
 <template>
   <div class="next">
-    <div class="next__text">Следующая молитва {{ labels[nextLabel] }}</div>
-    <div class="next__time">{{ today[nextLabel] }}</div>
+    <div class="next__text">Следующая молитва {{ nextPrayerName }}</div>
+    <div class="next__time">{{ time }}</div>
     <div class="next__left">Осталось {{ displayLeft }}</div>
   </div>
 </template>
@@ -9,12 +9,10 @@
 <script setup>
 import { stringToDate, useDate } from '../composables/useDate.js'
 import { computed } from 'vue'
-
-const props = defineProps({
-  today: Object,
-})
+import { useSchedule } from '../composables/useSchedule.ts'
 
 const { now, leftTime } = useDate()
+const { today, tomorrow } = useSchedule()
 
 const labels = {
   fajr: 'Фаджр',
@@ -27,10 +25,21 @@ const labels = {
 
 let nextLabel = computed(() => {
   return Object.keys(labels)
-      .find(label => now.value <= stringToDate(props.today[label]))
+      .find(label => now.value <= stringToDate(today.value[label]))
 })
 
-const displayLeft = computed(() => leftTime(stringToDate(props.today[nextLabel.value])))
+const nextPrayerName = computed(() => labels[nextLabel.value ? nextLabel.value : 'fajr'])
+const time = computed(() => {
+  return nextLabel.value
+      ? today.value[nextLabel.value]
+      : tomorrow.value['fajr']
+})
+
+const displayLeft = computed(() => {
+  return leftTime(
+      stringToDate(time.value, nextLabel.value ? 0 : 1)
+  )
+})
 </script>
 
 <style lang="scss">
