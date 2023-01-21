@@ -34,6 +34,11 @@ const tomorrow = ref(schedule.find(item => item.day === new Date().getDate() + 1
   color: #000000;
   padding: 50px 40px;
 
+  @media (max-width: 500px) {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
   .location {
     margin-bottom: 40px;
   }
