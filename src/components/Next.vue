@@ -48,9 +48,5 @@ const displayLeft = computed(() => leftTime(stringToDate(props.today[nextLabel.v
     line-height: 1;
     margin-bottom: 10px;
   }
-
-  &__left {
-
-  }
 }
 </style>

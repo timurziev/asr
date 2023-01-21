@@ -25,14 +25,14 @@ const tomorrow = ref(schedule.find(item => item.day === new Date().getDate() + 1
   </div>
 </template>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .wrapper {
-  box-sizing: border-box;
+  margin: 0 auto;
   width: 360px;
-  margin: 50px auto;
+  padding: 16px 40px 40px;
+  box-sizing: border-box;
   background-color: #ffffff;
   color: #000000;
-  padding: 50px 40px;
 
   @media (max-width: 500px) {
     margin-top: 0;

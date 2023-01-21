@@ -1,36 +1,36 @@
 <template>
   <div class="timetable">
     <div class="timetable__row">
-      <span class="timetable__name">Фаджр</span>
-      <span class="timetable__time">{{ today.fajr }}</span>
+      <span>Фаджр</span>
+      <span>{{ today.fajr }}</span>
     </div>
     <div class="timetable__row timetable__row--secondary">
-      <span class="timetable__name">Восход</span>
-      <span class="timetable__time">{{ today.sunset }}</span>
+      <span>Восход</span>
+      <span>{{ today.sunset }}</span>
     </div>
     <div class="timetable__row">
-      <span class="timetable__name">Зухр</span>
-      <span class="timetable__time">{{ today.zuhr }}</span>
+      <span>Зухр</span>
+      <span>{{ today.zuhr }}</span>
     </div>
     <div class="timetable__row">
-      <span class="timetable__name">Аср</span>
-      <span class="timetable__time">{{ today.asr }}</span>
+      <span>Аср</span>
+      <span>{{ today.asr }}</span>
     </div>
     <div class="timetable__row">
-      <span class="timetable__name">Магриб</span>
-      <span class="timetable__time">{{ today.maghrib }}</span>
+      <span>Магриб</span>
+      <span>{{ today.maghrib }}</span>
     </div>
     <div class="timetable__row">
-      <span class="timetable__name">Иша</span>
-      <span class="timetable__time">{{ today.isha }}</span>
+      <span>Иша</span>
+      <span>{{ today.isha }}</span>
     </div>
     <div class="timetable__row timetable__row--secondary">
-      <span class="timetable__name">Середина ночи</span>
-      <span class="timetable__time">{{ half }}</span>
+      <span>Середина ночи</span>
+      <span>{{ half }}</span>
     </div>
     <div class="timetable__row timetable__row--secondary">
-      <span class="timetable__name">Треть ночи</span>
-      <span class="timetable__time">{{ third }}</span>
+      <span>Треть ночи</span>
+      <span>{{ third }}</span>
     </div>
   </div>
 </template>
