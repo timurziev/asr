@@ -1,14 +1,6 @@
-interface DailySchedule {
-  day: number,
-  fajr: string,
-  sunset: string,
-  zuhr: string,
-  asr: string,
-  maghrib: string,
-  isha: string,
-}
+import {DailySchedule} from "../../types";
 
-const schedule: DailySchedule[] = [
+export const schedule: DailySchedule[] = [
   {
     day: 1,
     fajr: '06:01',
@@ -289,5 +281,3 @@ const schedule: DailySchedule[] = [
     isha: '18:33',
   },
 ]
-
-export default schedule
