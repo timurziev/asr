@@ -1,35 +1,38 @@
 <template>
-  <table class="schedule-table">
-    <tr>
-      <th></th>
-      <th>Фаджр</th>
-      <th>Рассвет</th>
-      <th>Зухр</th>
-      <th>Аср</th>
-      <th>Магриб</th>
-      <th>Иша</th>
-    </tr>
-    <tr v-for="item in scheduleForMonth" :key="item.day">
-      <td>{{ item.day }}</td>
-      <td>{{ item.fajr }}</td>
-      <td>{{ item.sunset }}</td>
-      <td>{{ item.zuhr }}</td>
-      <td>{{ item.asr }}</td>
-      <td>{{ item.maghrib }}</td>
-      <td>{{ item.isha }}</td>
-    </tr>
-  </table>
+  <section class="schedule">
+    <div class="section__title">Расписание</div>
+    <table class="schedule-table">
+      <tr>
+        <th></th>
+        <th>Фаджр</th>
+        <th>Рассвет</th>
+        <th>Зухр</th>
+        <th>Аср</th>
+        <th>Магриб</th>
+        <th>Иша</th>
+      </tr>
+      <tr v-for="item in scheduleForMonth" :key="item.day">
+        <td>{{ item.day }}</td>
+        <td>{{ item.fajr }}</td>
+        <td>{{ item.sunset }}</td>
+        <td>{{ item.zuhr }}</td>
+        <td>{{ item.asr }}</td>
+        <td>{{ item.maghrib }}</td>
+        <td>{{ item.isha }}</td>
+      </tr>
+    </table>
+  </section>
 </template>
 
 <script setup>
-import { useSchedule } from '../composables/useSchedule.ts'
+import { useSchedule } from '../../composables/useSchedule.ts'
 
 const { scheduleForMonth} = useSchedule()
 </script>
 
 <style lang="scss">
 .schedule {
-  max-height: 600px;
+  max-height: 568px;
   overflow-y: auto;
 
   -ms-overflow-style: none;  /* IE and Edge */

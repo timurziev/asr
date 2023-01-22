@@ -16,9 +16,9 @@
 </template>
 
 <script setup>
-import IconHome from '../icons/IconHome.vue'
-import IconSchedule from '../icons/IconSchedule.vue'
-import IconSettings from '../icons/IconSettings.vue'
+import IconHome from './icons/IconHome.vue'
+import IconSchedule from './icons/IconSchedule.vue'
+import IconSettings from './icons/IconSettings.vue'
 
 defineProps({
   activeSection: String,
@@ -28,6 +28,7 @@ defineProps({
 <style lang="scss">
 .navigation {
   width: 100%;
+  padding: 10px;
   box-sizing: border-box;
   display: flex;
   justify-content: space-around;

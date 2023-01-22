@@ -1,12 +1,23 @@
 <template>
   <div class="location">
     <IconLocation/>
-    Назрань
+    {{ displayLocation }}
   </div>
 </template>
 
 <script setup>
-import IconLocation from '../icons/IconLocation.vue'
+import IconLocation from './icons/IconLocation.vue'
+import useSettings from '../composables/useSettings.js'
+import { ref } from 'vue'
+
+const { settings } = useSettings()
+
+const cities = {
+  nazran: 'Назрань',
+  dubai: 'Дубай',
+}
+
+const displayLocation = ref(cities[settings.value.location])
 </script>
 
 <style lang="scss">

@@ -1,24 +1,24 @@
 <script setup>
-import Location from './components/Location.vue'
-import Next from './components/Next.vue'
-import Timetable from './components/Timetable.vue'
+import HomeSection from './components/sections/HomeSection.vue'
 import Navigation from './components/Navigation.vue'
+import ScheduleSection from './components/sections/ScheduleSection.vue'
+import SettingsSection from './components/sections/SettingsSection.vue'
 import { ref } from 'vue'
-import Schedule from './components/Schedule.vue'
 
-const activeSection = ref('schedule') // todo: home
+const activeSection = ref('home')
 </script>
 
 <template>
   <div class="wrapper">
-    <section class="home" v-if="activeSection === 'home'">
-      <Location/>
-      <Next/>
-      <Timetable/>
-    </section>
-    <section class="schedule" v-if="activeSection === 'schedule'">
-      <Schedule/>
-    </section>
+    <HomeSection
+        v-if="activeSection === 'home'"
+    />
+    <ScheduleSection
+        v-if="activeSection === 'schedule'"
+    />
+    <SettingsSection
+        v-if="activeSection === 'settings'"
+    />
     <Navigation
         :active-section="activeSection"
         @navigate="activeSection = $event"
@@ -46,11 +46,15 @@ const activeSection = ref('schedule') // todo: home
   }
 }
 
-.home {
-  padding: 16px 40px 0;
-}
-
-.navigation {
-  padding: 10px;
+.section {
+  overflow: hidden;
+  &__title {
+    margin-bottom: 16px;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: 500;
+    text-align: center;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.14);
+  }
 }
 </style>
