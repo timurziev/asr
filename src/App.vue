@@ -4,12 +4,14 @@ import Navigation from './components/Navigation.vue'
 import ScheduleSection from './components/sections/ScheduleSection.vue'
 import SettingsSection from './components/sections/SettingsSection.vue'
 import { ref } from 'vue'
+import { useSchedule } from './composables/useSchedule.js'
 
 const activeSection = ref('home')
+const { loaded } = useSchedule()
 </script>
 
 <template>
-  <div class="wrapper">
+  <div class="wrapper" v-if="loaded">
     <HomeSection
         v-if="activeSection === 'home'"
     />

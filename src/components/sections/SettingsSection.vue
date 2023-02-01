@@ -4,7 +4,11 @@
     <div class="settings-content">
       <div class="form-group">
         <div class="form-group__title">Город:</div>
-        <select class="select" v-model="settings.location">
+        <select
+            class="select"
+            v-model="settings.location"
+            @change="onSelectChange"
+        >
           <option value="nazran">Назрань</option>
           <option value="dubai">Дубай</option>
         </select>
@@ -15,8 +19,14 @@
 
 <script setup>
 import useSettings from '../../composables/useSettings.js'
+import { useSchedule } from '../../composables/useSchedule.js'
 
 const { settings } = useSettings()
+
+const onSelectChange = async () => {
+  const {loadSchedule} = useSchedule()
+  await loadSchedule()
+}
 </script>
 
 <style lang="scss">
