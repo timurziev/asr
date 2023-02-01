@@ -9,7 +9,7 @@
 <script setup>
 import { stringToDate, useDate } from '../composables/useDate.js'
 import { computed } from 'vue'
-import { useSchedule } from '../composables/useSchedule.ts'
+import { useSchedule } from '../composables/useSchedule.js'
 
 const { now, leftTime } = useDate()
 const { today, tomorrow } = useSchedule()

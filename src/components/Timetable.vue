@@ -38,7 +38,7 @@
 <script setup>
 import { computed } from 'vue'
 import { dateToString } from '../composables/useDate.js'
-import { useSchedule } from '../composables/useSchedule.ts'
+import { useSchedule } from '../composables/useSchedule.js'
 
 const { today, startOfNight, endOfNight } = useSchedule()
 

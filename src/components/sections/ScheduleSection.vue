@@ -25,7 +25,7 @@
 </template>
 
 <script setup>
-import { useSchedule } from '../../composables/useSchedule.ts'
+import { useSchedule } from '../../composables/useSchedule.js'
 
 const { scheduleForMonth} = useSchedule()
 </script>
