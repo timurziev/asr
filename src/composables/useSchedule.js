@@ -7,10 +7,10 @@ const {settings} = useSettings()
 const schedule = ref(null)
 const tomorrow = ref(null)
 
-schedule.value = await loadSchedule()
+loadSchedule().then(value => schedule.value = value)
 
 const today = computed(() => schedule.value.find(item => item.day === new Date().getDate()))
-tomorrow.value = await getTomorrowTimes()
+getTomorrowTimes().then(value => tomorrow.value = value)
 
 const startOfNight = computed(() => stringToDate(today.value.maghrib))
 const endOfNight = computed(() => stringToDate(tomorrow.value.fajr, 1))
@@ -30,7 +30,7 @@ export function useSchedule () {
 async function loadSchedule(month = null) {
   let currentMonth = month ? month : (new Date()).getMonth() + 1
 
-  const { schedule } = await import(`../data/${settings.value.location}/${currentMonth}`)
+  const { schedule } = await import(`../data/${settings.value.location}/${currentMonth}.ts`)
 
   return schedule
 }
