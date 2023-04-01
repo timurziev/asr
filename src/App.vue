@@ -40,6 +40,7 @@ const { loaded } = useSchedule()
   position: relative;
 
   @media (max-width: 500px) {
+    width: auto;
     margin-top: 0;
     margin-bottom: 0;
   }
