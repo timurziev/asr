@@ -35,6 +35,9 @@ const { loaded } = useSchedule()
   box-sizing: border-box;
   background-color: #ffffff;
   color: #000000;
+  min-height: 642px;
+  padding-bottom: 64px; // for navigation
+  position: relative;
 
   @media (max-width: 500px) {
     margin-top: 0;

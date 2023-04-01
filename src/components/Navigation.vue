@@ -27,6 +27,9 @@ defineProps({
 
 <style lang="scss">
 .navigation {
+  position: absolute;
+  bottom: 0;
+  left: 0;
   width: 100%;
   padding: 10px;
   box-sizing: border-box;
