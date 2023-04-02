@@ -52,7 +52,7 @@ const { loaded } = useSchedule()
     margin-bottom: 40px;
 
     @media (max-height: 700px) {
-      margin-bottom: 25px;
+      margin-bottom: 35px;
     }
   }
 }

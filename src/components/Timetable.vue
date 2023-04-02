@@ -105,10 +105,6 @@ const showInfo = (type) => {
     padding: 8px 0;
     font-weight: 500;
 
-    @media (max-height: 700px) {
-      padding: 7px 0;
-    }
-
     &:not(:last-child) {
       border-bottom: 1px solid rgba(0, 0, 0, 0.06);
     }
@@ -123,7 +119,10 @@ const showInfo = (type) => {
     align-items: center;
 
     svg {
+      display: block;
       margin-left: 10px;
+      position: relative;
+      top: -0.5px;
     }
   }
   &__time {
