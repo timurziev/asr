@@ -105,7 +105,7 @@ const showInfo = (type) => {
     padding: 8px 0;
     font-weight: 500;
 
-    @media (max-height: 600px) {
+    @media (max-height: 700px) {
       padding: 7px 0;
     }
 

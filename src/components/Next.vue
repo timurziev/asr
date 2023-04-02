@@ -57,7 +57,7 @@ const displayLeft = computed(() => {
     line-height: 1;
     margin-bottom: 10px;
 
-    @media (max-height: 600px) {
+    @media (max-height: 700px) {
       font-size: 70px;
     }
   }

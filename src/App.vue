@@ -51,7 +51,7 @@ const { loaded } = useSchedule()
   .timetable {
     margin-bottom: 40px;
 
-    @media (max-height: 600px) {
+    @media (max-height: 700px) {
       margin-bottom: 25px;
     }
   }

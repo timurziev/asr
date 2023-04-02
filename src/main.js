@@ -7,19 +7,19 @@ createApp(App).mount('#app')
 
 // Vanilla
 
-function debounce (f, ms) {
-  let isCoolDown = false
-
-  return function () {
-    if (isCoolDown) return
-
-    f.apply(this, arguments)
-
-    isCoolDown = true
-
-    setTimeout(() => isCoolDown = false, ms)
-  }
-}
+// function debounce (f, ms) {
+//   let isCoolDown = false
+//
+//   return function () {
+//     if (isCoolDown) return
+//
+//     f.apply(this, arguments)
+//
+//     isCoolDown = true
+//
+//     setTimeout(() => isCoolDown = false, ms)
+//   }
+// }
 
 function setVh () {
   let vh = window.innerHeight * 0.01;
@@ -28,4 +28,4 @@ function setVh () {
 
 setVh()
 
-window.addEventListener('resize', debounce(setVh, 500));
+// window.addEventListener('resize', debounce(setVh, 500));
