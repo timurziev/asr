@@ -32,7 +32,7 @@ const { scheduleForMonth} = useSchedule()
 
 <style lang="scss">
 .schedule {
-  max-height: 568px;
+  max-height: 100%;
   overflow-y: auto;
 
   -ms-overflow-style: none;  /* IE and Edge */

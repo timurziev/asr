@@ -35,7 +35,8 @@ const { loaded } = useSchedule()
   box-sizing: border-box;
   background-color: #ffffff;
   color: #000000;
-  min-height: 642px;
+  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
   padding-bottom: 64px; // for navigation
   position: relative;
 
@@ -49,6 +50,10 @@ const { loaded } = useSchedule()
   .next,
   .timetable {
     margin-bottom: 40px;
+
+    @media (max-height: 600px) {
+      margin-bottom: 25px;
+    }
   }
 }
 

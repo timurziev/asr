@@ -105,6 +105,10 @@ const showInfo = (type) => {
     padding: 8px 0;
     font-weight: 500;
 
+    @media (max-height: 600px) {
+      padding: 7px 0;
+    }
+
     &:not(:last-child) {
       border-bottom: 1px solid rgba(0, 0, 0, 0.06);
     }
