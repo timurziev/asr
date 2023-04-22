@@ -60,6 +60,10 @@ const { loaded } = useSchedule()
 .section {
   overflow: hidden;
   &__title {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background-color: #ffffff;
     margin-bottom: 16px;
     padding: 12px;
     font-size: 16px;

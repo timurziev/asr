@@ -41,6 +41,7 @@ defineProps({
   transition: color .2s;
 
   &__item {
+    flex: 1 1 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
