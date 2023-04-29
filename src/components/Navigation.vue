@@ -31,7 +31,7 @@ defineProps({
   bottom: 0;
   left: 0;
   width: 100%;
-  padding: 10px;
+  padding: 10px 0 20px;
   box-sizing: border-box;
   display: flex;
   justify-content: space-around;
@@ -41,6 +41,7 @@ defineProps({
   transition: color .2s;
 
   &__item {
+    flex: 1 1 0;
     display: flex;
     flex-direction: column;
     justify-content: center;

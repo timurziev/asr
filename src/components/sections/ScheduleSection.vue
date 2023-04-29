@@ -1,6 +1,6 @@
 <template>
   <section class="schedule">
-    <div class="section__title">Расписание</div>
+    <div class="section__title">{{ sectionTitle }}</div>
     <table class="schedule-table">
       <tr>
         <th></th>
@@ -11,10 +11,14 @@
         <th>Магриб</th>
         <th>Иша</th>
       </tr>
-      <tr v-for="item in scheduleForMonth" :key="item.day">
+      <tr
+          v-for="item in scheduleForMonth"
+          :key="item.day"
+          :class="item.day === new Date().getDate() ? 'schedule-table__today' : ''"
+      >
         <td>{{ item.day }}</td>
         <td>{{ item.fajr }}</td>
-        <td>{{ item.sunset }}</td>
+        <td class="schedule-table__cell--secondary">{{ item.sunset }}</td>
         <td>{{ item.zuhr }}</td>
         <td>{{ item.asr }}</td>
         <td>{{ item.maghrib }}</td>
@@ -28,6 +32,23 @@
 import { useSchedule } from '../../composables/useSchedule.js'
 
 const { scheduleForMonth} = useSchedule()
+
+const sectionTitle = [
+  'Январь',
+  'Февраль',
+  'Март',
+  'Апрель',
+  'Май',
+  'Июнь',
+  'Июль',
+  'Август',
+  'Сентябрь',
+  'Октябрь',
+  'Ноябрь',
+  'Декабрь',
+][
+  new Date().getMonth()
+]
 </script>
 
 <style lang="scss">
@@ -61,6 +82,7 @@ const { scheduleForMonth} = useSchedule()
   th {
     padding-top: 16px;
     padding-bottom: 16px;
+    background-color: #ffffff;
   }
 
   td {
@@ -69,11 +91,44 @@ const { scheduleForMonth} = useSchedule()
     &:first-child {
       font-weight: 700;
       text-align: right;
+      font-feature-settings: "tnum" on, "lnum" on;
     }
   }
 
-  tr:nth-child(2) {
+  tr {
+    &:first-child {
+      position: sticky;
+      top: 42px;
+    }
+
+    &:nth-child(2) {
+      td {
+        border-top: none;
+      }
+    }
+  }
+
+  &__cell {
+    &--secondary {
+      color: #727088;
+    }
+  }
+
+  &__today {
     td {
+      background-color: #6200ee;
+      color: #ffffff;
+      border-top: none;
+
+      &:first-child {
+        border-radius: 5px 0 0 5px;
+      }
+      &:last-child {
+        border-radius: 0 5px 5px 0;
+      }
+    }
+
+    & + tr td {
       border-top: none;
     }
   }

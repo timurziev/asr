@@ -37,7 +37,7 @@ const { loaded } = useSchedule()
   color: #000000;
   height: 100vh;
   height: calc(var(--vh, 1vh) * 100);
-  padding-bottom: 64px; // for navigation
+  padding-bottom: 74px; // for navigation
   position: relative;
 
   @media (max-width: 500px) {
@@ -60,6 +60,10 @@ const { loaded } = useSchedule()
 .section {
   overflow: hidden;
   &__title {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background-color: #ffffff;
     margin-bottom: 16px;
     padding: 12px;
     font-size: 16px;
