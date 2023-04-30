@@ -11,7 +11,7 @@ const tomorrow = ref(null)
 const startOfNight = ref(null)
 const endOfNight = ref(null)
 
-loadSchedule().then(() => {})
+setVariables().then(() => {})
 
 export function useSchedule () {
   return {
@@ -26,25 +26,30 @@ export function useSchedule () {
 }
 
 async function loadSchedule(month = null) {
-  let currentMonth = month ? month : (new Date()).getMonth() + 1
+  if (!month) {
+    month = (new Date()).getMonth() + 1 // if month is not passed use current month
+  }
+
   let location = settings.value.location
 
-  const modules = await import(`../data/${location}/${currentMonth}.ts`)
+  const modules = await import(`../data/${location}/${month}.ts`)
 
-  schedule.value = modules.schedule
+  console.info(`Loaded schedule for: ${location}. Month: ${month}`)
 
-  console.info(`Loaded schedule for: ${location}. Month: ${currentMonth}`)
-  await setVariables()
-  loaded.value = true
+  return modules.schedule
 }
 
 async function setVariables () {
+  schedule.value = await loadSchedule()
+
   today.value = schedule.value.find(item => item.day === new Date().getDate())
 
   tomorrow.value = await getTomorrowTimes()
 
   startOfNight.value = stringToDate(today.value.maghrib)
   endOfNight.value = stringToDate(tomorrow.value.fajr, 1)
+
+  loaded.value = true
 }
 
 async function getTomorrowTimes() {

@@ -11,16 +11,22 @@ const { loaded } = useSchedule()
 </script>
 
 <template>
-  <div class="wrapper" v-if="loaded">
+  <div class="wrapper">
     <HomeSection
-        v-if="activeSection === 'home'"
+        v-if="loaded && activeSection === 'home'"
     />
     <ScheduleSection
-        v-if="activeSection === 'schedule'"
+        v-if="loaded && activeSection === 'schedule'"
     />
     <SettingsSection
         v-if="activeSection === 'settings'"
     />
+
+    <div v-if="!loaded && activeSection !== 'settings'"
+         class="not-loaded-alert"
+         v-text="'Загрузка...'"
+    />
+
     <Navigation
         :active-section="activeSection"
         @navigate="activeSection = $event"
@@ -71,5 +77,12 @@ const { loaded } = useSchedule()
     text-align: center;
     box-shadow: 0 2px 3px rgba(0, 0, 0, 0.14);
   }
+}
+
+.not-loaded-alert {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 </style>
