@@ -1,5 +1,6 @@
 import { DailySchedule } from '../../types'
 
+// todo: remove todo
 export const schedule: DailySchedule[] = [
   {
     day: 1,
