@@ -13,6 +13,19 @@
           <option value="dubai">Дубай</option>
         </select>
       </div>
+      <div class="form-group form-group--checkbox">
+        <input
+            type="checkbox"
+            class="checkbox"
+            id="showDuhaa"
+            v-model="settings.showDuhaa"
+        >
+        <label
+            class="form-group__label"
+            for="showDuhaa"
+            v-text="'Показывать молитву Дух\'а'"
+        />
+      </div>
     </div>
   </section>
 </template>
@@ -33,15 +46,30 @@ const onSelectChange = async () => {
 .form-group {
   display: block;
 
-  &__title {
-    margin-bottom: 12px;
+  &--checkbox {
+    display: flex;
+    align-items: center;
+  }
+
+  &__title,
+  &__label {
     font-weight: 500;
     font-size: 14px;
     color: #727088;
   }
 
+  &__title {
+    margin-bottom: 12px;
+  }
+
+  &__label {
+    margin-left: 12px;
+    user-select: none;
+    cursor: pointer;
+  }
+
   &:not(:last-child) {
-    margin-bottom: 16px;
+    margin-bottom: 32px;
   }
 }
 
@@ -54,5 +82,11 @@ const onSelectChange = async () => {
   padding: 12px 8px;
   border: 1px solid #727088;
   font-weight: 500;
+}
+
+.checkbox {
+  width: 32px;
+  height: 32px;
+  margin: 0;
 }
 </style>

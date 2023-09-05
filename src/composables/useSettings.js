@@ -1,8 +1,9 @@
 import { ref, watch } from 'vue'
 
 const defaults = {
-  version: 1,
+  version: 2,
   location: 'nazran',
+  showDuhaa: false,
 }
 
 const storageSettingsString = localStorage.getItem('settings')

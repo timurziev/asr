@@ -11,6 +11,16 @@
       </div>
       <span class="timetable__time">{{ today.sunset }}</span>
     </div>
+    <div
+        v-if="settings.showDuhaa"
+        class="timetable__row timetable__row--secondary"
+    >
+      <span>Духа</span>
+      <span
+          class="timetable__time"
+          v-text="`${duhaa.start} — ${duhaa.end}`"
+      />
+    </div>
     <div class="timetable__row">
       <span>Зухр</span>
       <span class="timetable__time">{{ today.zuhr }}</span>
@@ -46,15 +56,17 @@
 
 <script setup>
 import { computed } from 'vue'
-import { dateToString } from '../composables/useDate.js'
+import { dateToString, stringToDate } from '../composables/useDate.js'
 import { useSchedule } from '../composables/useSchedule.js'
 import IconQuestion from './icons/IconQuestion.vue'
+import useSettings from '../composables/useSettings.js'
 
 const emit = defineEmits([
   'info',
 ])
 
 const { today, startOfNight, endOfNight } = useSchedule()
+const { settings } = useSettings()
 
 let startTimestamp = startOfNight.value.getTime()
 let endTimestamp = endOfNight.value.getTime()
@@ -69,6 +81,16 @@ const third = computed(() => {
   return dateToString(
       new Date(endTimestamp - ((endTimestamp - startTimestamp) / 3))
   )
+})
+
+const duhaa = computed(() => {
+  const afterSunset = 20
+  const beforeZuhr = 5
+
+  return {
+    start: dateToString(new Date(stringToDate(today.value.sunset).getTime() + afterSunset * 60000)),
+    end: dateToString(new Date(stringToDate(today.value.zuhr).getTime() - beforeZuhr * 60000)),
+  }
 })
 
 const showInfo = (type) => {
