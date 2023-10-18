@@ -18,7 +18,7 @@
       >
         <td>{{ item.day }}</td>
         <td>{{ item.fajr }}</td>
-        <td class="schedule-table__cell--secondary">{{ item.sunset }}</td>
+        <td class="schedule-table__cell--secondary">{{ item.sunrise }}</td>
         <td>{{ item.zuhr }}</td>
         <td>{{ item.asr }}</td>
         <td>{{ item.maghrib }}</td>

@@ -7,9 +7,9 @@
     <div class="timetable__row timetable__row--secondary">
       <div class="timetable__label">
         <span>Рассвет</span>
-        <icon-question @click="showInfo('sunset')"/>
+        <icon-question @click="showInfo('sunrise')"/>
       </div>
-      <span class="timetable__time">{{ today.sunset }}</span>
+      <span class="timetable__time">{{ today.sunrise }}</span>
     </div>
     <div class="timetable__row">
       <span>Зухр</span>
@@ -73,7 +73,7 @@ const third = computed(() => {
 
 const showInfo = (type) => {
   const contents = {
-    sunset: {
+    sunrise: {
       title: 'Рассвет',
       text: '<p>Утренняя молитва (Фаджр) должна быть совершена до наступления времени рассвета.</p>',
     },

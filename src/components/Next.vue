@@ -16,7 +16,7 @@ const { today, tomorrow } = useSchedule()
 
 const labels = {
   fajr: 'Фаджр',
-  sunset: 'Рассвет',
+  sunrise: 'Рассвет',
   zuhr: 'Зухр',
   asr: 'Аср',
   maghrib: 'Магриб',
