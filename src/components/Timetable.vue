@@ -84,11 +84,11 @@ const third = computed(() => {
 })
 
 const duhaa = computed(() => {
-  const afterSunset = 20
+  const afterSunrise = 20
   const beforeZuhr = 5
 
   return {
-    start: dateToString(new Date(stringToDate(today.value.sunset).getTime() + afterSunset * 60000)),
+    start: dateToString(new Date(stringToDate(today.value.sunrise).getTime() + afterSunrise * 60000)),
     end: dateToString(new Date(stringToDate(today.value.zuhr).getTime() - beforeZuhr * 60000)),
   }
 })
