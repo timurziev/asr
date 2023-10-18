@@ -4,7 +4,7 @@ export const schedule: DailySchedule[] = [
   {
     day: 1,
     fajr: '04:21',
-    sunset: '05:43',
+    sunrise: '05:43',
     zuhr: '12:28',
     asr: '15:53',
     maghrib: '19:07',
@@ -13,7 +13,7 @@ export const schedule: DailySchedule[] = [
   {
     day: 2,
     fajr: '04:22',
-    sunset: '05:43',
+    sunrise: '05:43',
     zuhr: '12:28',
     asr: '15:53',
     maghrib: '19:07',
@@ -22,7 +22,7 @@ export const schedule: DailySchedule[] = [
   {
     day: 3,
     fajr: '04:22',
-    sunset: '05:44',
+    sunrise: '05:44',
     zuhr: '12:28',
     asr: '15:53',
     maghrib: '19:06',
@@ -31,7 +31,7 @@ export const schedule: DailySchedule[] = [
   {
     day: 4,
     fajr: '04:23',
-    sunset: '05:44',
+    sunrise: '05:44',
     zuhr: '12:28',
     asr: '15:53',
     maghrib: '19:05',
@@ -40,7 +40,7 @@ export const schedule: DailySchedule[] = [
   {
     day: 5,
     fajr: '04:24',
-    sunset: '05:45',
+    sunrise: '05:45',
     zuhr: '12:28',
     asr: '15:53',
     maghrib: '19:05',
@@ -49,7 +49,7 @@ export const schedule: DailySchedule[] = [
   {
     day: 6,
     fajr: '04:24',
-    sunset: '05:45',
+    sunrise: '05:45',
     zuhr: '12:28',
     asr: '15:53',
     maghrib: '19:04',
@@ -58,7 +58,7 @@ export const schedule: DailySchedule[] = [
   {
     day: 7,
     fajr: '04:25',
-    sunset: '05:45',
+    sunrise: '05:45',
     zuhr: '12:27',
     asr: '15:53',
     maghrib: '19:03',
@@ -67,7 +67,7 @@ export const schedule: DailySchedule[] = [
   {
     day: 8,
     fajr: '04:26',
-    sunset: '05:46',
+    sunrise: '05:46',
     zuhr: '12:27',
     asr: '15:53',
     maghrib: '19:03',
@@ -76,7 +76,7 @@ export const schedule: DailySchedule[] = [
   {
     day: 9,
     fajr: '04:26',
-    sunset: '05:46',
+    sunrise: '05:46',
     zuhr: '12:27',
     asr: '15:53',
     maghrib: '19:02',
@@ -85,7 +85,7 @@ export const schedule: DailySchedule[] = [
   {
     day: 10,
     fajr: '04:27',
-    sunset: '05:47',
+    sunrise: '05:47',
     zuhr: '12:27',
     asr: '15:53',
     maghrib: '19:01',
@@ -94,7 +94,7 @@ export const schedule: DailySchedule[] = [
   {
     day: 11,
     fajr: '04:28',
-    sunset: '05:47',
+    sunrise: '05:47',
     zuhr: '12:27',
     asr: '15:53',
     maghrib: '19:00',
@@ -103,7 +103,7 @@ export const schedule: DailySchedule[] = [
   {
     day: 12,
     fajr: '04:28',
-    sunset: '05:48',
+    sunrise: '05:48',
     zuhr: '12:27',
     asr: '15:53',
     maghrib: '19:00',
@@ -112,7 +112,7 @@ export const schedule: DailySchedule[] = [
   {
     day: 13,
     fajr: '04:29',
-    sunset: '05:48',
+    sunrise: '05:48',
     zuhr: '12:27',
     asr: '15:53',
     maghrib: '18:59',
@@ -121,7 +121,7 @@ export const schedule: DailySchedule[] = [
   {
     day: 14,
     fajr: '04:30',
-    sunset: '05:49',
+    sunrise: '05:49',
     zuhr: '12:26',
     asr: '15:53',
     maghrib: '18:58',
@@ -130,7 +130,7 @@ export const schedule: DailySchedule[] = [
   {
     day: 15,
     fajr: '04:30',
-    sunset: '05:49',
+    sunrise: '05:49',
     zuhr: '12:26',
     asr: '15:53',
     maghrib: '18:57',
@@ -139,7 +139,7 @@ export const schedule: DailySchedule[] = [
   {
     day: 16,
     fajr: '04:31',
-    sunset: '05:50',
+    sunrise: '05:50',
     zuhr: '12:26',
     asr: '15:53',
     maghrib: '18:56',
@@ -148,7 +148,7 @@ export const schedule: DailySchedule[] = [
   {
     day: 17,
     fajr: '04:32',
-    sunset: '05:50',
+    sunrise: '05:50',
     zuhr: '12:26',
     asr: '15:53',
     maghrib: '18:56',
@@ -157,7 +157,7 @@ export const schedule: DailySchedule[] = [
   {
     day: 18,
     fajr: '04:32',
-    sunset: '05:50',
+    sunrise: '05:50',
     zuhr: '12:26',
     asr: '15:52',
     maghrib: '18:55',
@@ -166,7 +166,7 @@ export const schedule: DailySchedule[] = [
   {
     day: 19,
     fajr: '04:33',
-    sunset: '05:51',
+    sunrise: '05:51',
     zuhr: '12:25',
     asr: '15:52',
     maghrib: '18:54',
@@ -175,7 +175,7 @@ export const schedule: DailySchedule[] = [
   {
     day: 20,
     fajr: '04:33',
-    sunset: '05:51',
+    sunrise: '05:51',
     zuhr: '12:25',
     asr: '15:52',
     maghrib: '18:53',
@@ -184,7 +184,7 @@ export const schedule: DailySchedule[] = [
   {
     day: 21,
     fajr: '04:34',
-    sunset: '05:52',
+    sunrise: '05:52',
     zuhr: '12:25',
     asr: '15:52',
     maghrib: '18:52',
@@ -193,7 +193,7 @@ export const schedule: DailySchedule[] = [
   {
     day: 22,
     fajr: '04:35',
-    sunset: '05:52',
+    sunrise: '05:52',
     zuhr: '12:25',
     asr: '15:52',
     maghrib: '18:51',
@@ -202,7 +202,7 @@ export const schedule: DailySchedule[] = [
   {
     day: 23,
     fajr: '04:35',
-    sunset: '05:53',
+    sunrise: '05:53',
     zuhr: '12:24',
     asr: '15:52',
     maghrib: '18:50',
@@ -211,7 +211,7 @@ export const schedule: DailySchedule[] = [
   {
     day: 24,
     fajr: '04:36',
-    sunset: '05:53',
+    sunrise: '05:53',
     zuhr: '12:24',
     asr: '15:51',
     maghrib: '18:49',
@@ -220,7 +220,7 @@ export const schedule: DailySchedule[] = [
   {
     day: 25,
     fajr: '04:36',
-    sunset: '05:53',
+    sunrise: '05:53',
     zuhr: '12:24',
     asr: '15:51',
     maghrib: '18:48',
@@ -229,7 +229,7 @@ export const schedule: DailySchedule[] = [
   {
     day: 26,
     fajr: '04:37',
-    sunset: '05:54',
+    sunrise: '05:54',
     zuhr: '12:23',
     asr: '15:51',
     maghrib: '18:47',
@@ -238,7 +238,7 @@ export const schedule: DailySchedule[] = [
   {
     day: 27,
     fajr: '04:38',
-    sunset: '05:54',
+    sunrise: '05:54',
     zuhr: '12:23',
     asr: '15:50',
     maghrib: '18:46',
@@ -247,7 +247,7 @@ export const schedule: DailySchedule[] = [
   {
     day: 28,
     fajr: '04:38',
-    sunset: '05:55',
+    sunrise: '05:55',
     zuhr: '12:23',
     asr: '15:50',
     maghrib: '18:45',
@@ -256,7 +256,7 @@ export const schedule: DailySchedule[] = [
   {
     day: 29,
     fajr: '04:39',
-    sunset: '05:55',
+    sunrise: '05:55',
     zuhr: '12:23',
     asr: '15:50',
     maghrib: '18:44',
@@ -265,7 +265,7 @@ export const schedule: DailySchedule[] = [
   {
     day: 30,
     fajr: '04:39',
-    sunset: '05:55',
+    sunrise: '05:55',
     zuhr: '12:22',
     asr: '15:50',
     maghrib: '18:43',
@@ -274,7 +274,7 @@ export const schedule: DailySchedule[] = [
   {
     day: 31,
     fajr: '04:40',
-    sunset: '05:56',
+    sunrise: '05:56',
     zuhr: '12:22',
     asr: '15:49',
     maghrib: '18:42',
