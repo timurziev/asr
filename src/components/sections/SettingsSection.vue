@@ -24,8 +24,8 @@ import { useSchedule } from '../../composables/useSchedule.js'
 const { settings } = useSettings()
 
 const onSelectChange = async () => {
-  const {loadSchedule} = useSchedule()
-  await loadSchedule()
+  const { setVariables } = useSchedule()
+  await setVariables()
 }
 </script>
 

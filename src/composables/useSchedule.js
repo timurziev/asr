@@ -22,6 +22,7 @@ export function useSchedule () {
     endOfNight,
     scheduleForMonth: schedule,
     loadSchedule,
+    setVariables,
   }
 }
 
@@ -40,7 +41,17 @@ async function loadSchedule(month = null) {
 }
 
 async function setVariables () {
-  schedule.value = await loadSchedule()
+  try {
+    schedule.value = await loadSchedule()
+  } catch (exception) {
+    // If failed to load schedule reset the variables to their initial values and leave the function
+    loaded.value = false
+    schedule.value = today.value = tomorrow.value = startOfNight.value = endOfNight.value = null
+
+    console.error(`Failed to load schedule for: ${settings.value.location}`)
+
+    return
+  }
 
   today.value = schedule.value.find(item => item.day === new Date().getDate())
 
