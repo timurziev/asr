@@ -15,6 +15,7 @@
           v-for="item in scheduleForMonth"
           :key="item.day"
           :class="item.day === new Date().getDate() ? 'schedule-table__today' : ''"
+          :ref="item.day === new Date().getDate() ? 'todayElement' : null"
       >
         <td>{{ item.day }}</td>
         <td>{{ item.fajr }}</td>
@@ -30,6 +31,7 @@
 
 <script setup>
 import { useSchedule } from '../../composables/useSchedule.js'
+import { nextTick, ref } from 'vue'
 
 const { scheduleForMonth } = useSchedule()
 
@@ -49,6 +51,14 @@ const sectionTitle = [
 ][
   new Date().getMonth()
 ]
+
+const todayElement = ref()
+
+nextTick(() => {
+  if (todayElement.value) {
+    todayElement.value[0].scrollIntoView();
+  }
+})
 </script>
 
 <style lang="scss">
