@@ -12,15 +12,22 @@ const { loaded, startOfNight, endOfNight } = useSchedule()
 const { settings } = useSettings()
 
 const darkTheme = computed(() => {
-  switch (settings.value.theme) {
-    case 'light': return false
-    case 'dark': return true
-    case 'adaptive':
-      const currentTime = (new Date()).getTime()
+  let result = false
+  const currentTime = (new Date()).getTime()
 
-      return startOfNight.value.getTime() <= currentTime
+  if (
+      settings.value.theme === 'dark'
+      || (
+          settings.value.theme === 'adaptive'
+          && startOfNight.value.getTime() <= currentTime
           && endOfNight.value.getTime() > currentTime
-  }
+      )
+  ) result = true
+
+  // refactor this
+  document.getElementById('themeColor').setAttribute('content', result ? '#220E58' : '#ffffff')
+
+  return result
 })
 </script>
 
