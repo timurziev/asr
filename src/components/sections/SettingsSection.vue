@@ -10,6 +10,7 @@
             @change="onSelectChange"
         >
           <option value="nazran">Назрань</option>
+          <option value="moscow">Москва</option>
           <option value="dubai">Дубай</option>
         </select>
       </div>

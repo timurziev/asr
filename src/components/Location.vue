@@ -13,8 +13,9 @@ import { ref } from 'vue'
 const { settings } = useSettings()
 
 const cities = {
-  nazran: 'Назрань',
   dubai: 'Дубай',
+  moscow: 'Москва',
+  nazran: 'Назрань',
 }
 
 const displayLocation = ref(cities[settings.value.location])
