@@ -13,6 +13,18 @@
           <option value="dubai">Дубай</option>
         </select>
       </div>
+      <div class="form-group">
+        <div class="form-group__title">Тема:</div>
+        <select
+            class="select"
+            v-model="settings.theme"
+            @change=""
+        >
+          <option value="light">Светлая</option>
+          <option value="dark">Тёмная</option>
+          <option value="adaptive">Светлая днём, тёмная ночью</option>
+        </select>
+      </div>
       <div class="form-group form-group--checkbox">
         <input
             type="checkbox"
@@ -23,7 +35,7 @@
         <label
             class="form-group__label"
             for="showDuhaa"
-            v-text="'Показывать молитву Дух\'а'"
+            v-text="'Показывать время Ад-Духа'"
         />
       </div>
     </div>
@@ -55,7 +67,7 @@ const onSelectChange = async () => {
   &__label {
     font-weight: 500;
     font-size: 14px;
-    color: #727088;
+    color: var(--secondary-color);
   }
 
   &__title {

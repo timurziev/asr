@@ -31,7 +31,7 @@
 <script setup>
 import { useSchedule } from '../../composables/useSchedule.js'
 
-const { scheduleForMonth} = useSchedule()
+const { scheduleForMonth } = useSchedule()
 
 const sectionTitle = [
   'Январь',
@@ -56,8 +56,8 @@ const sectionTitle = [
   max-height: 100%;
   overflow-y: auto;
 
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
   &::-webkit-scrollbar {
     display: none;
   }
@@ -74,6 +74,7 @@ const sectionTitle = [
   th, td {
     padding: 6px;
     text-align: center;
+
     &:first-child {
       width: 16px;
     }
@@ -82,11 +83,11 @@ const sectionTitle = [
   th {
     padding-top: 16px;
     padding-bottom: 16px;
-    background-color: #ffffff;
+    background-color: var(--background-color);
   }
 
   td {
-    border-top: 2px solid #ebebeb;
+    border-top: 2px solid var(--border-color);
 
     &:first-child {
       font-weight: 700;
@@ -110,22 +111,27 @@ const sectionTitle = [
 
   &__cell {
     &--secondary {
-      color: #727088;
+      color: var(--secondary-color);
     }
   }
 
   &__today {
     td {
-      background-color: #6200ee;
-      color: #ffffff;
+      background-color: var(--color);
+      color: var(--background-color);
       border-top: none;
 
       &:first-child {
         border-radius: 5px 0 0 5px;
       }
+
       &:last-child {
         border-radius: 0 5px 5px 0;
       }
+    }
+
+    .schedule-table__cell--secondary {
+      color: var(--secondary-color);
     }
 
     & + tr td {

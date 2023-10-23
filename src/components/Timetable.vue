@@ -128,12 +128,12 @@ const showInfo = (type) => {
     font-weight: 500;
 
     &:not(:last-child) {
-      border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+      border-bottom: 1px solid var(--border-color);
     }
 
     &--secondary {
       font-weight: 400;
-      color: #727088;
+      color: var(--secondary-color);
     }
   }
   &__label {

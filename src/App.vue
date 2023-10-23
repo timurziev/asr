@@ -3,15 +3,29 @@ import HomeSection from './components/sections/HomeSection.vue'
 import Navigation from './components/Navigation.vue'
 import ScheduleSection from './components/sections/ScheduleSection.vue'
 import SettingsSection from './components/sections/SettingsSection.vue'
-import { ref } from 'vue'
+import { computed, ref } from 'vue'
 import { useSchedule } from './composables/useSchedule.js'
+import useSettings from './composables/useSettings.js'
 
 const activeSection = ref('home')
-const { loaded } = useSchedule()
+const { loaded, startOfNight, endOfNight } = useSchedule()
+const { settings } = useSettings()
+
+const darkTheme = computed(() => {
+  switch (settings.value.theme) {
+    case 'light': return false
+    case 'dark': return true
+    case 'adaptive':
+      const currentTime = (new Date()).getTime()
+
+      return startOfNight.value.getTime() <= currentTime
+          && endOfNight.value.getTime() > currentTime
+  }
+})
 </script>
 
 <template>
-  <div class="wrapper">
+  <div class="wrapper" :class="{'wrapper--dark': darkTheme}">
     <HomeSection
         v-if="loaded && activeSection === 'home'"
     />
@@ -36,11 +50,27 @@ const { loaded } = useSchedule()
 
 <style lang="scss">
 .wrapper {
+  --background-color: #ffffff;
+  --color: #000000;
+  --secondary-color: #727088;
+  --button-color: #6200EE;
+  --border-color: rgba(0, 0, 0, 0.06);
+
+  &--dark {
+    --background-color: #220E58;
+    --color: #ffffff;
+    --secondary-color: #A18BDD;
+    --button-color: #ffffff;
+    --border-color: rgba(255, 255, 255, 0.1);
+  }
+}
+
+.wrapper {
   margin: 0 auto;
   width: 360px;
   box-sizing: border-box;
-  background-color: #ffffff;
-  color: #000000;
+  background-color: var(--background-color);
+  color: var(--color);
   height: 100vh;
   height: calc(var(--vh, 1vh) * 100);
   padding-bottom: 74px; // for navigation
@@ -69,7 +99,7 @@ const { loaded } = useSchedule()
     position: sticky;
     top: 0;
     z-index: 1;
-    background-color: #ffffff;
+    background-color: var(--background-color);
     margin-bottom: 16px;
     padding: 12px;
     font-size: 16px;

@@ -22,7 +22,7 @@ const displayLocation = ref(cities[settings.value.location])
 
 <style lang="scss">
 .location {
-  color: #727088;
+  color: var(--secondary-color);
   font-size: 14px;
   display: flex;
   justify-content: center;

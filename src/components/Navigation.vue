@@ -35,7 +35,7 @@ defineProps({
   box-sizing: border-box;
   display: flex;
   justify-content: space-around;
-  color: #727088;
+  color: var(--secondary-color);
   cursor: pointer;
   user-select: none;
   transition: color .2s;
@@ -55,7 +55,7 @@ defineProps({
 
     &:hover,
     &--active {
-      color: #6200EE;
+      color: var(--button-color);
     }
   }
 }
