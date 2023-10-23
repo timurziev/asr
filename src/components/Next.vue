@@ -1,6 +1,6 @@
 <template>
   <div class="next">
-    <div class="next__text">Следующая молитва {{ nextPrayerName }}</div>
+    <div class="next__text">{{ nextText }}</div>
     <div class="next__time">{{ time }}</div>
     <div class="next__left">Осталось {{ displayLeft }}</div>
   </div>
@@ -39,6 +39,14 @@ const displayLeft = computed(() => {
   return leftTime(
       stringToDate(time.value, nextLabel.value ? 0 : 1)
   )
+})
+
+const nextText = computed(() => {
+  if (nextLabel.value === 'sunrise') {
+    return 'Скоро рассвет'
+  }
+
+  return `Следующая молитва ${nextPrayerName.value}`
 })
 </script>
 
