@@ -19,6 +19,8 @@ const darkTheme = computed(() => {
       settings.value.theme === 'dark'
       || (
           settings.value.theme === 'adaptive'
+          && startOfNight.value // check that this variable loaded
+          && endOfNight.value // check that this variable loaded
           && startOfNight.value.getTime() <= currentTime
           && endOfNight.value.getTime() > currentTime
       )
