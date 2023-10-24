@@ -27,7 +27,7 @@ const darkTheme = computed(() => {
   ) result = true
 
   // refactor this
-  document.getElementById('themeColor').setAttribute('content', result ? '#220E58' : '#ffffff')
+  document.getElementById('themeColor').setAttribute('content', result ? '#271f3c' : '#ffffff')
 
   return result
 })
