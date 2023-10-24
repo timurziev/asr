@@ -60,7 +60,7 @@ document.addEventListener('click', event => {
   }
 
   &__content {
-    background: #ffffff;
+    background-color: var(--background-color);
     position: absolute;
     left: 0;
     bottom: 0;
@@ -86,7 +86,7 @@ document.addEventListener('click', event => {
     font-weight: 400;
     font-size: 14px;
     line-height: 1.42;
-    color: #727088;
+    color: var(--secondary-color);
   }
 }
 </style>

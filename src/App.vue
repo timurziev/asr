@@ -66,9 +66,9 @@ const darkTheme = computed(() => {
   --border-color: rgba(0, 0, 0, 0.06);
 
   &--dark {
-    --background-color: #220E58;
-    --color: #ffffff;
-    --secondary-color: #A18BDD;
+    --background-color: #271f3c;
+    --color: #eeeeee;
+    --secondary-color: #a69fb7;
     --button-color: #ffffff;
     --border-color: rgba(255, 255, 255, 0.1);
   }

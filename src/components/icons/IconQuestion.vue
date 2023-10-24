@@ -24,7 +24,7 @@ export default {}
   transition: color .2s;
 
   &:hover {
-    color: #000000;
+    color: var(--color);
   }
 }
 </style>
