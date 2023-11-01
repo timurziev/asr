@@ -5,6 +5,12 @@ import App from './App.vue'
 createApp(App).mount('#app')
 
 
+const onWorkerReady = () => {
+  console.info('ServiceWorker is ready');
+}
+navigator.serviceWorker.register('serviceWorker.js');
+navigator.serviceWorker.ready.then(onWorkerReady);
+
 // Vanilla
 
 // function debounce (f, ms) {
