@@ -1,4 +1,4 @@
-const cacheName = 'cache-first-v1'
+const cacheName = 'cache-first-v2'
 
 self.addEventListener('activate', (event) => {
   event.waitUntil(caches.keys().then((keyList) => {
@@ -15,7 +15,9 @@ self.addEventListener('fetch', (event) => {
     'document',
     'font',
     'image',
+    'manifest',
     'script',
+    'style',
   ]
 
   if (!typesToCache.includes(event.request.destination)) return
